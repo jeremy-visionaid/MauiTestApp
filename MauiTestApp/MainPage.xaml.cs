@@ -1,24 +1,22 @@
-﻿namespace MauiTestApp
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Diagnostics;
+
+namespace MauiTestApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        [RelayCommand]
+        static async Task NavigateTo()
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            Debug.WriteLine("Before GoToAsync");
+            await Shell.Current.GoToAsync("newPage");
+            Debug.WriteLine("After GoToAsync");
         }
     }
 
