@@ -7,6 +7,8 @@
         public MainPage()
         {
             InitializeComponent();
+
+            var color = SixLabors.ImageSharp.Color.Aqua;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
