@@ -7,6 +7,8 @@
         public MainPage()
         {
             InitializeComponent();
+
+            System.Diagnostics.Trace.WriteLine($"{System.Drawing.Size.Empty}");
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
