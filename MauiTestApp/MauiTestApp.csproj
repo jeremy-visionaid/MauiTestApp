@@ -64,4 +64,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
+	<ItemGroup Condition="$(TargetPlatform) == 'ios' OR $(TargetPlatform) == 'maccatalyst'">
+		<_MonoComponent Include="diagnostics_tracing" />
+	</ItemGroup>
+
 </Project>
