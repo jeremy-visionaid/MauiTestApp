@@ -1,24 +1,27 @@
-﻿namespace MauiTestApp
+﻿using System.Diagnostics;
+
+namespace MauiTestApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        bool alerted = false;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        async void OnPinchUpdated(object sender, PinchGestureUpdatedEventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            Debug.WriteLine($"Pinch Updated: Status: {e.Status}");
+            if (e.Status == GestureStatus.Running)
+            {
+                if (!alerted)
+                {
+                    alerted = true;
+                    await DisplayAlert("Pinch Updated", "Message", "OK");
+                }
+            }
         }
     }
 
