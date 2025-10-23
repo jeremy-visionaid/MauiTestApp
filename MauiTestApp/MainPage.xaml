@@ -14,6 +14,7 @@
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
+                x:Name="HelloLabel"
                 Text="Hello, World!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
@@ -26,7 +27,7 @@
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
+                Text="Click me"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
