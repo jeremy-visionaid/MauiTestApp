@@ -1,24 +1,32 @@
-﻿namespace MauiTestApp
+﻿using System.Diagnostics;
+
+namespace MauiTestApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            var settings = Properties.Settings.Default;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (settings.UpgradeRequired)
+            {
+                settings.Upgrade();
+                settings.UpgradeRequired = false;
+                settings.Save();
+
+                HelloLabel.Text = "Settings updated";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                HelloLabel.Text = "Settings are up-to-date";
+            }
         }
     }
 
