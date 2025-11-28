@@ -1,15 +1,16 @@
-﻿namespace MauiTestApp
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using Microsoft.Extensions.DependencyInjection;
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
-    }
+namespace MauiTestApp;
+
+public partial class App : Application
+{
+	public App()
+	{
+		InitializeComponent();
+	}
+
+	protected override Window CreateWindow(IActivationState? activationState)
+	{
+		return new Window(new AppShell());
+	}
 }
