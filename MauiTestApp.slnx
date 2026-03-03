@@ -1,3 +1,8 @@
 <Solution>
-  <Project Path="MauiTestApp/MauiTestApp.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="MauiTestApp/MauiTestApp.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
