@@ -1,4 +1,6 @@
-﻿namespace MauiTestApp;
+﻿using System.Diagnostics;
+
+namespace MauiTestApp;
 
 public partial class MainPage : ContentPage
 {
@@ -19,5 +21,11 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         SemanticScreenReader.Announce(CounterBtn.Text);
+
+        AbsoluteLayout a = new();
+        Debug.WriteLine(a.SafeAreaEdges);
+
+        ContentPage p = new();
+        Debug.WriteLine(p.SafeAreaEdges);
     }
 }
