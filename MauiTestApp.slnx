@@ -2,6 +2,7 @@
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
+  <Project Path="MauiLib1/MauiLib1.csproj" Id="1187297b-7708-4cf0-bfe4-7532dbe59bca" />
   <Project Path="MauiTestApp/MauiTestApp.csproj">
     <Deploy Solution="Debug|*" />
   </Project>
